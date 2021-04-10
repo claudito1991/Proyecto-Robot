@@ -6,6 +6,7 @@ TagManager:
   tags:
   - projectil
   - enemigo
+  - something
   layers:
   - Default
   - TransparentFX

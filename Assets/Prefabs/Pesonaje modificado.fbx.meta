@@ -33,7 +33,72 @@ ModelImporter:
   - first:
       74: 8349542763059015795
     second: Armature|Walk
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aspiradora
+    second: {fileID: 2100000, guid: c9ee316f9299ee84780993f5d5efd2fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brazos
+    second: {fileID: 2100000, guid: 86ccbb81471122c478fe5c669bf9137b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cara
+    second: {fileID: 2100000, guid: d603c9ac311af424b88c67f862c2b3a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hombros
+    second: {fileID: 2100000, guid: 5b36dba46d11ca14eb8f979f4dc4bb6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Licuadora
+    second: {fileID: 2100000, guid: ff2cdd8a4e47a804687fb94002a79723, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Manos
+    second: {fileID: 2100000, guid: 006483757008d5d42946c7ba945783dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 76d107281c8636f4a861c9e0dae35296, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tapa.001
+    second: {fileID: 2100000, guid: a0b986b91e1eb204984965738d38dc43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tibia
+    second: {fileID: 2100000, guid: 4d41f077a4f45b14aacd472cefa19bed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Torso
+    second: {fileID: 2100000, guid: 2a4549b03e7224149a6f91e7d076157a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidrio
+    second: {fileID: 2100000, guid: 2711e0960a2e3c94398152a7aeb393fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pies
+    second: {fileID: 2100000, guid: c9a05e547fe3325488d518d443fdf751, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: protector
+    second: {fileID: 2100000, guid: ecd33701f4c20a94e9fbd2a9daf1b65c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

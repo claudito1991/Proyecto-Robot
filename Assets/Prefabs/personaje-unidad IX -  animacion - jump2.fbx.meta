@@ -27,7 +27,72 @@ ModelImporter:
   - first:
       74: 8349542763059015795
     second: Armature|Walk
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aspiradora
+    second: {fileID: 2100000, guid: d384f230e7945aa4d82e656a99441c66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brazos
+    second: {fileID: 2100000, guid: 8d6c21e3d2c8b454a9ddf3d45b8af53a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cara
+    second: {fileID: 2100000, guid: feb6861084cfafb49931a9268897bb6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hombros
+    second: {fileID: 2100000, guid: 84dff658caa7b1345b30c333dae65a13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Licuadora
+    second: {fileID: 2100000, guid: 11296b958fc26da468c2ffeae8800d09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Manos
+    second: {fileID: 2100000, guid: 6cc9b9333d70e874c98b0cf5eeb6a766, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 1c80fe22dab11ae4a93deb7e3c5f52dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tapa
+    second: {fileID: 2100000, guid: 0b0a65c3dfae2914eaac8d5c5f65130b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tapa.001
+    second: {fileID: 2100000, guid: bdd84c175921bf846bb4d10e9f0188d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tibia
+    second: {fileID: 2100000, guid: 49f1eea8b00a8bd4e9474291dd8f9595, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Torso
+    second: {fileID: 2100000, guid: db2bfe25a8825df4ead8f76fd8d6d989, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pies
+    second: {fileID: 2100000, guid: eb715fd60c06c6d47853e0a03c27efe7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: protector
+    second: {fileID: 2100000, guid: 83820ba4528e9f442871e4a16c7b0120, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
