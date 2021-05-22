@@ -18,6 +18,7 @@ public class pointsManager : MonoBehaviour
 
         totalPoints = puntosInicio;
         barra.SetMaxReciclado(puntosMax);
+        Cursor.visible = false;
 
     }
 
