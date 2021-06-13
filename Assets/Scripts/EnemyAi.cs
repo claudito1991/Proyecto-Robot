@@ -91,7 +91,7 @@ public class EnemyAi : MonoBehaviour
                 }
             case EnemyState.Chase:
                 {
-                    Debug.Log("Te persigo");
+                    //Debug.Log("Te persigo");
                     if (!PlayerInSight())
                     {
                         currentState = EnemyState.Wander;
@@ -125,7 +125,7 @@ public class EnemyAi : MonoBehaviour
                         transform.LookAt(targetLocation);
                         anim.SetBool("isWalk", false);
                         anim.SetTrigger("isAttack");
-                        Debug.Log("Te ataco");
+                        //Debug.Log("Te ataco");
                         EnemyShooting();
                     //}
                     if (PlayerInSight())

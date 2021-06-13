@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class detectCollisionAmmo : MonoBehaviour
 {
+    public ParticleSystem particulas = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,13 +12,16 @@ public class detectCollisionAmmo : MonoBehaviour
     }
 
     // Update is called once per frame
-   
-    private void OnTriggerEnter(Collider other)
-    {
-    
-      Destroy(gameObject);
-          
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            particulas.Play();
+            Destroy(gameObject);
+        }
+        
     }
+
     
 }
