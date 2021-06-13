@@ -8,6 +8,8 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] float movementSpeed = 5f;
 
+    static Animator anim;
+
     private float attackRange = 20f;
     private float rayDistance = 10.0f;
     private float stoppingDistance = 3f;
@@ -41,6 +43,7 @@ public class EnemyAi : MonoBehaviour
     {
         
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        anim = GetComponentInChildren<Animator>();
         
     }
 
@@ -92,6 +95,7 @@ public class EnemyAi : MonoBehaviour
                     if (!PlayerInSight())
                     {
                         currentState = EnemyState.Wander;
+                        anim.SetBool("isWalk", true);
 
                         return;
                     }
@@ -119,12 +123,15 @@ public class EnemyAi : MonoBehaviour
                     //{
                         var targetLocation = new Vector3(target.position.x, target.position.y + targetOffset, target.position.z);
                         transform.LookAt(targetLocation);
+                        anim.SetBool("isWalk", false);
+                        anim.SetTrigger("isAttack");
                         Debug.Log("Te ataco");
                         EnemyShooting();
                     //}
                     if (PlayerInSight())
                     {
                         currentState = EnemyState.Chase;
+                        anim.SetBool("isWalk", true);
                     }
 
                     if (!PlayerInSight())
