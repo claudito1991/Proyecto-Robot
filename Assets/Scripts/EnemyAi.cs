@@ -211,7 +211,7 @@ public class EnemyAi : MonoBehaviour
         
         lastShoot += Time.deltaTime;
 
-        Debug.Log($"last shoot was {lastShoot}");
+        //Debug.Log($"last shoot was {lastShoot}");
         if (Cooldown < lastShoot)
         {
             lastShoot = 0;

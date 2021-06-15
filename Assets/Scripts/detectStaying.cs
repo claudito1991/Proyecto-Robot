@@ -14,7 +14,7 @@ private void OnTriggerEnter(Collider other)
 
        if(other.gameObject.CompareTag("Player"))
     {
-        Debug.Log("Entraste en un objeto");
+        //Debug.Log("Entraste en un objeto");
         frame = 0;
     }
     
@@ -24,7 +24,7 @@ private void OnTriggerExit(Collider other)
 {
         if(other.gameObject.CompareTag("Player"))
     {
-        Debug.Log("Saliste de un objeto");
+       // Debug.Log("Saliste de un objeto");
         frame = 0;
     } 
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7578866681733759688}
   - component: {fileID: 7578866681733759689}
   - component: {fileID: 7578866681733759691}
+  - component: {fileID: 470589989}
   m_Layer: 0
   m_Name: EnemyAI
   m_TagString: enemigo
@@ -69,6 +70,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!65 &470589989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578866681733759686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.1041565, y: 0.9689083, z: 6.234454}
+  m_Center: {x: 0.09328461, y: 0.5130205, z: -1.3692198}
 --- !u!1 &7578866681917803976
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,19 +113,6 @@ Transform:
   m_Father: {fileID: 7578866681733759688}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -12.202001, y: 0, z: 0}
---- !u!65 &3206997315080979320
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8819855808029933898}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.1041565, y: 0.9689083, z: 8.648664}
-  m_Center: {x: 0.09328461, y: 0.5130205, z: 0.93276405}
 --- !u!95 &170801813
 Animator:
   serializedVersion: 3
