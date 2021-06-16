@@ -16,6 +16,8 @@ public class AimSystem : MonoBehaviour
     private Vector3 lockedEnemyPosition;
     public Vector3 aimingOffset = new Vector3(0f, 2f, 0f);
     public float speed = 1.0f;
+    public Transform characterTransform;
+ 
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class AimSystem : MonoBehaviour
         //target = GetComponentInChildren<Transform>();
         script = enemyRadar.GetComponent<EnemyRadar>();
         lockedEnemyPosition = new Vector3(0f, 0f, 0f);
+        enemyLocked.position = new Vector3(15f,0,0) + firePoint.position;
         
         
     }
@@ -38,24 +41,71 @@ public class AimSystem : MonoBehaviour
             enemyLocked = script.trans;
             lockedEnemyPosition = enemyLocked.transform.position;
             Debug.Log($"the locked enemy is: {enemyLocked}");
-            
+            maxDistance = Vector3.Distance(transform.position, enemyLocked.transform.position);
         }
 
+
+        //target.position = enemyLocked.transform.position;
+        //transform.LookAt(enemyLocked.position);
+        //TargetAiming();
+        //AimingAngle();
+            Aiming();
+
+            
+            
+            
+         
+           
+           
+       
+         
+       
         
-        target.position = enemyLocked.transform.position;
-        
 
-
-
-        maxDistance = Vector3.Distance(transform.position, enemyLocked.transform.position);
-
-       if(enemyLocked == null || maxDistance > distaceLocked || Input.GetKeyDown(KeyCode.Tab))
+        if (enemyLocked == null || maxDistance > distaceLocked || Input.GetKeyDown(KeyCode.Tab))
         {
             isEnemyLocked = false;
         }
 
 
        
+    }
+
+    private void TargetAiming()
+    {
+        Vector3 targetDir = enemyLocked.position - transform.position;
+        //targetDir.y = 0;
+        float step = speed * Time.deltaTime;
+
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+        Debug.DrawRay(transform.position, newDir, Color.red);
+
+        transform.rotation = Quaternion.LookRotation(newDir);
+
+
+    }
+
+    private float AimingAngle()
+    {
+        Vector3 targetDir = enemyLocked.position - transform.position;
+        float angle = Vector3.Angle(targetDir, characterTransform.forward);
+        Debug.Log($"The angle between Canon and character is: {angle}");
+        return angle;
+    }
+
+    private void Aiming()
+    {
+        
+        if (AimingAngle() < 50)
+        {
+            TargetAiming();
+        }
+        else
+        {
+            
+
+            isEnemyLocked = false;
+        }
     }
 
     
