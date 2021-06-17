@@ -21,7 +21,12 @@ ModelImporter:
   - first:
       43: 4300000
     second: House_16
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CityMaterial_28
+    second: {fileID: 2100000, guid: 02a79dc92e3f38c4bab740bf06ab6183, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
