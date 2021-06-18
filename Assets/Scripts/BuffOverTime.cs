@@ -35,7 +35,10 @@ public class BuffOverTime : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             puntos.totalPoints += puntosPorSegundo * Time.deltaTime;
+
+            // Cambio este valor para poder acceder a la camara de la torre
             puntos.buffSeActivo = true;
+            //Esta linea le avisa al gameManager que objeto lo está llamando.
             puntos.objectCalling = parentTower.transform.root;
              StartCoroutine(VidaDelBuff());
         }

@@ -230,7 +230,7 @@ ModelImporter:
     second: Armature.003|LowerFanRot
   - first:
       74: -9045179934185379887
-    second: Armature.003|StripeMovement
+    second: FourthStripe
   - first:
       74: 4404542115933775832
     second: Armature.003|_Default
@@ -2166,8 +2166,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -2561,7 +2561,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.003|StripeMovement
+      name: FourthStripe
       takeName: Armature.003|StripeMovement
       internalID: 0
       firstFrame: 0
@@ -2572,8 +2572,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -2978,8 +2978,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0

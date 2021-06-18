@@ -14,8 +14,8 @@ public class pointsManager : MonoBehaviour
     public CinemachineVirtualCamera torre;
     public CinemachineVirtualCameraBase player;
     public Transform objectCalling;
-
     public bool buffSeActivo;
+    public TowerAnimation torreActiva;
 
     private void Start() 
     {
@@ -36,7 +36,11 @@ public class pointsManager : MonoBehaviour
         PuntosCuandoNoHayEnemigos();
         Debug.Log($"Estado del buff {buffSeActivo}");
         GettingCameras();
-        ChangeCameraPriority();
+        if (torre  != null)
+        {
+            ChangeCameraPriority();
+            ActivatingTower();
+        }
 
 
         //Aqui voy a llamar al script de la torre que estoy activando
@@ -84,6 +88,20 @@ public class pointsManager : MonoBehaviour
         {
             torre.Priority = 0;
             player.Priority = 1;
+        }
+    }
+
+    public void ActivatingTower()
+    {
+        if (buffSeActivo)
+        {
+            torreActiva = objectCalling.GetComponent<TowerAnimation>();
+            torreActiva.estaTorreActiva = true;
+        }
+
+        else
+        {
+            torreActiva = null;
         }
     }
 }

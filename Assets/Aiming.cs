@@ -7,13 +7,13 @@ public class Aiming : MonoBehaviour
 
 
 {
-    public Camera camera;
+    public Camera cameraF;
     private bool ray_hit_something = false;
 
     void Update()
     {
         RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cameraF.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit))
         {
