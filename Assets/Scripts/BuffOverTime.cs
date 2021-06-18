@@ -8,10 +8,12 @@ public class BuffOverTime : MonoBehaviour
     public float segundosDeVida = 10;
 
     public float puntosPorSegundo = 10;
+    public Transform parentTower;
     // Start is called before the first frame update
     void Start()
     {
         puntos = GameObject.Find("GameManager").GetComponent<pointsManager>();
+        parentTower = GetComponentInParent<Transform>();
        
     }
 
@@ -34,6 +36,7 @@ public class BuffOverTime : MonoBehaviour
         {
             puntos.totalPoints += puntosPorSegundo * Time.deltaTime;
             puntos.buffSeActivo = true;
+            puntos.objectCalling = parentTower.transform.root;
              StartCoroutine(VidaDelBuff());
         }
 

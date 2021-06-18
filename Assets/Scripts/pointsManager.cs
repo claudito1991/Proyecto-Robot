@@ -13,6 +13,7 @@ public class pointsManager : MonoBehaviour
     public recicladoBarra barra;
     public CinemachineVirtualCamera torre;
     public CinemachineVirtualCameraBase player;
+    public Transform objectCalling;
 
     public bool buffSeActivo;
 
@@ -23,6 +24,8 @@ public class pointsManager : MonoBehaviour
         barra.SetMaxReciclado(puntosMax);
         //Cursor.visible = false;
         buffSeActivo = false;
+        objectCalling = null;
+        
 
     }
 
@@ -32,7 +35,12 @@ public class pointsManager : MonoBehaviour
         //Debug.Log("Los puntos de pointManager son " + totalPoints);
         PuntosCuandoNoHayEnemigos();
         Debug.Log($"Estado del buff {buffSeActivo}");
+        GettingCameras();
         ChangeCameraPriority();
+
+
+        //Aqui voy a llamar al script de la torre que estoy activando
+        
 
     }
 
@@ -50,6 +58,18 @@ public class pointsManager : MonoBehaviour
 
             //El código de abajo queda deshabilitado porque sino cuando no hay enemigos la barra sube de golpe y se gana el juego
             //totalPoints += puntosOverTime * Time.deltaTime;
+        }
+    }
+
+    public void GettingCameras()
+    {
+        if (objectCalling)
+        {
+            torre = objectCalling.GetComponentInChildren<CinemachineVirtualCamera>();
+        }
+        else
+        {
+            objectCalling = null;
         }
     }
 
