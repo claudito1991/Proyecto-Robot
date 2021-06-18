@@ -6,11 +6,18 @@ public class detectStaying : MonoBehaviour
 {
     public recicladoBarra barraReciclado;
     private int frame = 0;
-
     public static float sumado;
+    public bool recicladorActivo;
     // Start is called before the first frame update
-private void OnTriggerEnter(Collider other) 
+
+
+    private void Start()
+    {
+        recicladorActivo = false;
+    }
+    private void OnTriggerEnter(Collider other) 
 {
+      
 
        if(other.gameObject.CompareTag("Player"))
     {
@@ -45,6 +52,7 @@ public void OnTriggerStay(Collider other)
          if (frame>100 && frame < 102)
          {
              sumado = 200.0f;
+
              //Debug.Log("puntos sumados" +" "+  sumado);
             
          }

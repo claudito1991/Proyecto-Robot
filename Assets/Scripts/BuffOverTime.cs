@@ -24,6 +24,7 @@ public class BuffOverTime : MonoBehaviour
     IEnumerator VidaDelBuff()
     {
         yield return new WaitForSeconds(segundosDeVida);
+        puntos.buffSeActivo = false;
         Destroy(gameObject);
     }
 
@@ -32,6 +33,7 @@ public class BuffOverTime : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             puntos.totalPoints += puntosPorSegundo * Time.deltaTime;
+            puntos.buffSeActivo = true;
              StartCoroutine(VidaDelBuff());
         }
 
