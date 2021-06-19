@@ -8,6 +8,7 @@ TagManager:
   - enemigo
   - something
   - fan
+  - initialDialogue
   layers:
   - Default
   - TransparentFX
