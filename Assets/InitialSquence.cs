@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 public class InitialSquence : MonoBehaviour
 {
     public GameObject player;
@@ -33,6 +34,15 @@ public class InitialSquence : MonoBehaviour
             player.GetComponent<PlayerControllerB>().enabled = true;
             mainCamera.enabled = true;
             player.GetComponent<UltimateShooting>().enabled = true;
+        }
+    }
+
+
+    void GoToMenu ()
+    {
+      if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
