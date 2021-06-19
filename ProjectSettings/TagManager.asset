@@ -9,6 +9,7 @@ TagManager:
   - something
   - fan
   - initialDialogue
+  - menu
   layers:
   - Default
   - TransparentFX
