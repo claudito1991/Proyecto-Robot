@@ -18,6 +18,7 @@ public class AimSystem : MonoBehaviour
     public float speed = 1.0f;
     public Transform characterTransform;
     private Vector3 restPos;
+    public Transform restingPos;
     
     // Start is called before the first frame update
     void Start()
@@ -38,11 +39,24 @@ public class AimSystem : MonoBehaviour
         //Se quitó de este IF la condición de && !isEnemyLocked
        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            
-            enemyLocked = script.trans;
-            lockedEnemyPosition = enemyLocked.transform.position;
-            isEnemyLocked = true;
-            maxDistance = Vector3.Distance(transform.position, enemyLocked.transform.position);
+            if (script.trans != null)
+            {
+                enemyLocked = script.trans;
+                lockedEnemyPosition = enemyLocked.transform.position;
+                isEnemyLocked = true;
+                maxDistance = Vector3.Distance(transform.position, enemyLocked.transform.position);
+            }
+            else
+            {
+                if (maxDistance > distaceLocked)
+                {
+                    Debug.Log("Enemy null");
+                    transform.Rotate(restPos);
+                }
+                //transform.LookAt(basefija.right);
+                //aqui va el codigo para llevar a la torreta a rest position
+          
+            }
         }
 
         

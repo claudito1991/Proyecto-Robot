@@ -10,6 +10,8 @@ TagManager:
   - fan
   - initialDialogue
   - menu
+  - enemyprojectile
+  - playerprojectile
   layers:
   - Default
   - TransparentFX

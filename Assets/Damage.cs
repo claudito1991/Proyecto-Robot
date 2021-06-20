@@ -27,7 +27,7 @@ public class Damage : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("projectil"))
+        if (collision.gameObject.CompareTag("enemyprojectile"))
         {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
