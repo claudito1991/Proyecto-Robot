@@ -10,11 +10,13 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    public InitialSquence initialSequence;
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
+        initialSequence.initialSquence();
 
         
     }
@@ -23,6 +25,12 @@ public class Dialogue : MonoBehaviour
     {
         index = 0;
         StartCoroutine(TypeLine());
+    }
+
+    private void OnDisable()
+    {
+        initialSequence.InitialSequenceEnd();
+
     }
 
     // Update is called once per frame
@@ -43,6 +51,8 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+    
+
     IEnumerator TypeLine()
     {
         // el foreach recorre los caracteres.  lines index va tomando las lineas del string y pasandolas a caracteres con el char array
@@ -56,6 +66,8 @@ public class Dialogue : MonoBehaviour
 
         }
     }
+
+
 
     void NextLine()
     {

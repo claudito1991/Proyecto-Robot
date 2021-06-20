@@ -9,14 +9,16 @@ public class PlayerControllerB : MonoBehaviour
     public float velocidadRotacion = 100.0f;
     //public GameObject proyectile; queda comentado porque lo voy a implementar con IK bones
     //public GameObject firePoint;
-
     private pointsManager puntos;
+    public Damage health;
+    public findPersonaje estado;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
         puntos = GameObject.Find("GameManager").GetComponent<pointsManager>();
+        
     }
 
     // Update is called once per frame
@@ -55,9 +57,15 @@ public class PlayerControllerB : MonoBehaviour
 
     public void GameOver()
     {
-        if (puntos.totalPoints < 0.1f || puntos.totalPoints > 9999.0f)
+        if (puntos.totalPoints < 0.1f || puntos.totalPoints > 9999.0f || health.currentHealth <= 0)
         {
+            estado.DefeatMessage(true);
             Destroy(gameObject);
         }
+
+        if (puntos.totalPoints > 9999.9f)
+        {
+            estado.DefeatMessage(false);
+        }    
     }
 }
