@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 1018848437}
   - component: {fileID: 1018848439}
   - component: {fileID: 1018848438}
+  - component: {fileID: 1161455304694702037}
   m_Layer: 8
   m_Name: PathChecker
   m_TagString: Untagged
@@ -100,7 +101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018848436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 14.5}
+  m_LocalPosition: {x: 0, y: 3.74, z: 14.5}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7578866681733759688}
@@ -115,7 +116,7 @@ SphereCollider:
   m_GameObject: {fileID: 1018848436}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.4481659
   m_Center: {x: 0, y: 3.094635, z: -2.8354645}
@@ -132,6 +133,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PathIsBlocked: 0
+--- !u!136 &1161455304694702037
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018848436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5040409
+  m_Height: 18.297924
+  m_Direction: 2
+  m_Center: {x: 0, y: -1.1966438, z: -3.0619755}
 --- !u!1 &1446221582
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fdae0c809cfaa4e9d306716a74c4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &1956956044
 GameObject:
   m_ObjectHideFlags: 0
