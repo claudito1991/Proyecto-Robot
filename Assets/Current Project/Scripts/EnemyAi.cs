@@ -179,9 +179,10 @@ public class EnemyAi : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, direction);
         var hitSomething = Physics.RaycastAll(ray, rayDistance, layerMask);
-       
+        Debug.Log($"Hit something lenght {hitSomething.Length}");
         if (hitSomething.Length > 0)
         {
+            Debug.Log("Hit something");
             return true;
         }
 
