@@ -27,6 +27,7 @@ public class EnemyAi : MonoBehaviour
     private Transform target;
     private EnemyState currentState;
     private Vector3 playerDirection;
+    public GameObject vfxShooting;
 
     
 
@@ -216,7 +217,7 @@ public class EnemyAi : MonoBehaviour
         {
             lastShoot = 0;
             var instantiatedProyectile = Instantiate(proyectile, firePoint.transform.position, firePoint.transform.rotation);
-            
+            Instantiate(vfxShooting, firePoint.transform.position, firePoint.transform.rotation);
             
         }
 

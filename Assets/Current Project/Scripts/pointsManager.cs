@@ -34,7 +34,7 @@ public class pointsManager : MonoBehaviour
         barra.SetReciclado(totalPoints);
         //Debug.Log("Los puntos de pointManager son " + totalPoints);
         PuntosCuandoNoHayEnemigos();
-        Debug.Log($"Estado del buff {buffSeActivo}");
+        //Debug.Log($"Estado del buff {buffSeActivo}");
         GettingCameras();
         if (torre  != null)
         {

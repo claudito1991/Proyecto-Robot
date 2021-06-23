@@ -12,6 +12,7 @@ public class InitialSquence : MonoBehaviour
     public GameObject menu;
     public Animator playerAnim;
     private GameObject[] enemigo;
+   
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,7 +29,7 @@ public class InitialSquence : MonoBehaviour
         //player.GetComponent<UltimateShooting>().enabled = false;
         //menu.SetActive(false);
         //EnemyInitial();
-    
+       
 
     }
 
@@ -61,6 +62,9 @@ public class InitialSquence : MonoBehaviour
         player.GetComponent<UltimateShooting>().enabled = false;
         menu.SetActive(false);
         EnemyInitial();
+   
+
+
 
       
     }

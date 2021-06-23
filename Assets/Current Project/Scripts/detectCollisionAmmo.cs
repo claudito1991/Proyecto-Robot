@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class detectCollisionAmmo : MonoBehaviour
 {
-    public ParticleSystem particulas = null;
+    public GameObject vfxExplosion;
+    public AudioSource localAudio;
+    public AudioClip hitSfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +18,11 @@ public class detectCollisionAmmo : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            particulas.Play();
+
+            localAudio.PlayOneShot(hitSfx);
+            Instantiate(vfxExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
-        }
+       
         
     }
 

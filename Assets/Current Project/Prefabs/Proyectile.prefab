@@ -152,5 +152,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e06db192ebaa2949a7c59f4fe803d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particulas: {fileID: 1461376457143250775, guid: ec5820121a0c01a4faaf8a9962dcd2b3,
+  vfxExplosion: {fileID: 6217952668238540189, guid: 934d189305106ce4bb7df0fe49f8c039,
     type: 3}

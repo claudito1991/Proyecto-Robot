@@ -12,6 +12,7 @@ TagManager:
   - menu
   - enemyprojectile
   - playerprojectile
+  - pollution
   layers:
   - Default
   - TransparentFX
