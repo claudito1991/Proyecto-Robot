@@ -13,6 +13,8 @@ TagManager:
   - enemyprojectile
   - playerprojectile
   - pollution
+  - ground
+  - barrier
   layers:
   - Default
   - TransparentFX

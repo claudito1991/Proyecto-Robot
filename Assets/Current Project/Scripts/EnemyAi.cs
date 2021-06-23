@@ -28,6 +28,8 @@ public class EnemyAi : MonoBehaviour
     private EnemyState currentState;
     private Vector3 playerDirection;
     public GameObject vfxShooting;
+    public PathChecker pathChecker;
+    public float enemyRotationSpeed;
 
     
 
@@ -73,6 +75,11 @@ public class EnemyAi : MonoBehaviour
                     while (IsPathBlocked())
                     {
                         Debug.Log("Path is blocked");
+                        GetDestination();
+                    }
+
+                    if (pathChecker.PathIsBlocked ==true)
+                    {
                         GetDestination();
                     }
 
@@ -179,15 +186,17 @@ public class EnemyAi : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, direction);
         var hitSomething = Physics.RaycastAll(ray, rayDistance, layerMask);
-        Debug.Log($"Hit something lenght {hitSomething.Length}");
+        Debug.DrawRay(transform.position, direction);
         if (hitSomething.Length > 0)
         {
-            Debug.Log("Hit something");
+           
             return true;
         }
 
         return false;
     }
+
+  
 
     private bool PlayerInSight()
     {
