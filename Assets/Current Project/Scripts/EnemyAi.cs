@@ -29,7 +29,7 @@ public class EnemyAi : MonoBehaviour
     private Vector3 playerDirection;
     public GameObject vfxShooting;
     public PathChecker pathChecker;
-    public float enemyRotationSpeed;
+    public float enemyRotationSpeed = 10f;
 
     
 
@@ -179,7 +179,10 @@ public class EnemyAi : MonoBehaviour
         direction = Vector3.Normalize(destination - transform.position);
         direction = new Vector3(direction.x, 0f, direction.z);
 
+        float step = enemyRotationSpeed * Time.deltaTime;
+
         desiredRotation = Quaternion.LookRotation(direction);
+        
     }
 
     private bool IsPathBlocked()
