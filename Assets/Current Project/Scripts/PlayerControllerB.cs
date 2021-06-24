@@ -7,7 +7,11 @@ public class PlayerControllerB : MonoBehaviour
     static Animator anim;
     public float velocidadCaminar = 10.0f;
     public float velocidadRotacion = 100.0f;
-    public AudioSource sonidoPersonaje;
+    public float velocidadActual = 10f;
+    public float velocidadCorrer = 40f;
+    public AudioSource sonidoPersonajeCaminar;
+    public AudioSource sonidoPersonajeCorrer;
+ 
    
     //public GameObject proyectile; queda comentado porque lo voy a implementar con IK bones
     //public GameObject firePoint;
@@ -20,7 +24,8 @@ public class PlayerControllerB : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         puntos = GameObject.Find("GameManager").GetComponent<pointsManager>();
-        sonidoPersonaje = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+       
+        //sonidoPersonaje = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
         
     }
 
@@ -29,22 +34,29 @@ public class PlayerControllerB : MonoBehaviour
     {
 
 
-        float traslacion = Input.GetAxis("Vertical") * velocidadCaminar;
+        float traslacion = Input.GetAxis("Vertical") * velocidadActual;
         float rotacion = Input.GetAxis("Horizontal") * velocidadRotacion;
 
         transform.Translate(0, 0, traslacion * Time.deltaTime);
         transform.Rotate(0, rotacion * Time.deltaTime, 0);
 
 
-        SonidoMovimiento(traslacion);
+        
       
 
-        if (traslacion != 0)
+        if (traslacion != 0 && Input.GetKey(KeyCode.LeftShift)== false)
         {
-
-            
-            
+            velocidadActual = velocidadCaminar;
             anim.SetBool("isWalk", true);
+            sonidoPersonajeCorrer.Stop();
+            if(!sonidoPersonajeCaminar.isPlaying)
+            {
+                sonidoPersonajeCaminar.Play();
+                Debug.Log("Se reproduce la caminata");
+            }
+            
+            
+           
         }
 
         else
@@ -55,9 +67,29 @@ public class PlayerControllerB : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Run"))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            anim.SetTrigger("isRun");
+            velocidadActual = velocidadCorrer;
+            anim.SetBool("isRun",true);
+            anim.SetBool("isWalk", false);
+            sonidoPersonajeCaminar.Stop();
+
+            if (!sonidoPersonajeCorrer.isPlaying)
+            {
+                sonidoPersonajeCorrer.Play();
+                Debug.Log("Se reproduce la corrida");
+            }
+
+
+
+        }
+
+
+
+        else
+        {
+            anim.SetBool("isRun", false);
+            
         }
 
         //if (Input.GetButtonDown("Fire"))
@@ -69,6 +101,7 @@ public class PlayerControllerB : MonoBehaviour
         GameOver();
     }
 
+    
     public void GameOver()
     {
         if (puntos.totalPoints < 0.1f ||  health.currentHealth <= 0)
@@ -84,13 +117,9 @@ public class PlayerControllerB : MonoBehaviour
         }    
     }
 
-    public void SonidoMovimiento (float traslacion)
+    public void CambiarSonidoMovimiento (AudioClip musica)
     {
-        if (!sonidoPersonaje.isPlaying && traslacion != 0)
-        {
-            
-            sonidoPersonaje.volume = 0.2f;
-            sonidoPersonaje.Play();
-        }
+
+
     }
 }
