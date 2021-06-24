@@ -10,14 +10,19 @@ public class pointsManager : MonoBehaviour
     public float puntosMax = 10000;
     public float puntosInicio = 5000;
     public float puntosOverTime = 50;
+    public bool buffSeActivo;
+    private bool canWin = false;
+
+
     public recicladoBarra barra;
-    public CinemachineVirtualCamera torre;
+    public CinemachineVirtualCamera torreCam;
     public CinemachineVirtualCameraBase player;
     public Transform objectCalling;
-    public bool buffSeActivo;
     public TowerAnimation torreActiva;
-    public TowerAnimation[]torres;
-    private bool canWin = false;
+    public TowerAnimation[] torres;
+    public CinemachineVirtualCamera winningTowerCam;
+
+ 
 
     private List<TowerAnimation> torresActivas = new List<TowerAnimation>();
     public List<TowerAnimation> GetColliders() { return torresActivas; }
@@ -45,7 +50,7 @@ public class pointsManager : MonoBehaviour
         PuntosCuandoNoHayEnemigos();
         //Debug.Log($"Estado del buff {buffSeActivo}");
         GettingCameras();
-        if (torre  != null)
+        if (torreCam  != null)
         {
             ChangeCameraPriority();
             ActivatingTower();
@@ -83,7 +88,8 @@ public class pointsManager : MonoBehaviour
     {
         if (objectCalling)
         {
-            torre = objectCalling.GetComponentInChildren<CinemachineVirtualCamera>();
+            Debug.Log($"La camara que está llamando es {objectCalling.name}");
+            torreCam = objectCalling.GetComponentInChildren<CinemachineVirtualCamera>();
         }
         else
         {
@@ -95,12 +101,12 @@ public class pointsManager : MonoBehaviour
     {
         if (buffSeActivo)
         {
-            torre.Priority = 1;
+            torreCam.Priority = 1;
             player.Priority = 0;
         }
         else
         {
-            torre.Priority = 0;
+            torreCam.Priority = 0;
             player.Priority = 1;
         }
     }
@@ -121,11 +127,11 @@ public class pointsManager : MonoBehaviour
 
     public void WinningCondition()
     {
-        foreach (TowerAnimation torre in torres)
+        foreach (TowerAnimation tor in torres)
         {
-            if (!torresActivas.Contains(torre) && torre.estaTorreActiva)
+            if (!torresActivas.Contains(tor) && tor.estaTorreActiva)
             {
-                torresActivas.Add(torre);
+                torresActivas.Add(tor);
             }
         }
 
@@ -134,6 +140,8 @@ public class pointsManager : MonoBehaviour
         if (torresActivas.Count == torres.Length)
         {
             canWin = true;
+            winningTowerCam.Priority = 1;
+            player.Priority = 0;
         }
 
      

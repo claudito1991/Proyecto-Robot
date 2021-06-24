@@ -41,11 +41,13 @@ public class findPersonaje : MonoBehaviour
         if (estado == true)
         {
             derrota.enabled = true;
+            victoria.enabled = false;
         }
 
         if (estado == false)
         {
             victoria.enabled = true;
+            derrota.enabled = false;
         }
     }
 
