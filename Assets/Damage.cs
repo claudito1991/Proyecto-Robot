@@ -32,6 +32,7 @@ public class Damage : MonoBehaviour
         {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
+            Debug.Log("Colision projectil enemigo");
         }
 
 
