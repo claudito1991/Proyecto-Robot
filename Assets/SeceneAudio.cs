@@ -22,9 +22,17 @@ public class SeceneAudio : MonoBehaviour
 
     public void ChangeBGM(AudioClip music)
     {
-        BGM.Stop();
-        BGM.clip = music;
-        BGM.Play();
+        if (BGM.clip == music)
+        {
+            return;
+        }
+        else
+        {
+            BGM.Stop();
+            BGM.clip = music;
+            BGM.Play();
+        }
+   
     }
 
 }
