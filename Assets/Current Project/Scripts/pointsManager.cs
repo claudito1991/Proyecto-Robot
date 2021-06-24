@@ -16,10 +16,16 @@ public class pointsManager : MonoBehaviour
     public Transform objectCalling;
     public bool buffSeActivo;
     public TowerAnimation torreActiva;
+    public TowerAnimation[]torres;
+    private bool canWin = false;
+
+    private List<TowerAnimation> torresActivas = new List<TowerAnimation>();
+    public List<TowerAnimation> GetColliders() { return torresActivas; }
+
 
     private void Start() 
     {
-
+        torres = FindObjectsOfType<TowerAnimation>();
         totalPoints = puntosInicio;
         barra.SetMaxReciclado(puntosMax);
         //Cursor.visible = false;
@@ -31,6 +37,9 @@ public class pointsManager : MonoBehaviour
 
     private void Update() 
     {
+        WinningCondition();
+       
+       
         barra.SetReciclado(totalPoints);
         //Debug.Log("Los puntos de pointManager son " + totalPoints);
         PuntosCuandoNoHayEnemigos();
@@ -56,12 +65,17 @@ public class pointsManager : MonoBehaviour
 
     public void PuntosCuandoNoHayEnemigos()
     {
-        if(GameObject.FindGameObjectsWithTag("enemigo").Length == 0)
-        {
-            //Debug.Log("Hay " + GameObject.FindGameObjectsWithTag("enemigo").Length + " enemigos!!!" );
+        //if(GameObject.FindGameObjectsWithTag("enemigo").Length == 0)
+        //{
+        //    //Debug.Log("Hay " + GameObject.FindGameObjectsWithTag("enemigo").Length + " enemigos!!!" );
 
-            //El código de abajo queda deshabilitado porque sino cuando no hay enemigos la barra sube de golpe y se gana el juego
-            //totalPoints += puntosOverTime * Time.deltaTime;
+        //    //El código de abajo queda deshabilitado porque sino cuando no hay enemigos la barra sube de golpe y se gana el juego
+        //    //totalPoints += puntosOverTime * Time.deltaTime;
+        //}
+
+        if (canWin)
+        {
+            totalPoints += puntosOverTime * Time.deltaTime;
         }
     }
 
@@ -103,5 +117,27 @@ public class pointsManager : MonoBehaviour
         {
             torreActiva = null;
         }
+    }
+
+    public void WinningCondition()
+    {
+        foreach (TowerAnimation torre in torres)
+        {
+            if (!torresActivas.Contains(torre) && torre.estaTorreActiva)
+            {
+                torresActivas.Add(torre);
+            }
+        }
+
+        Debug.Log($"Las torres activas son {torresActivas.Count}");
+
+        if (torresActivas.Count == torres.Length)
+        {
+            canWin = true;
+        }
+
+     
+
+
     }
 }

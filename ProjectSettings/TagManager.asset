@@ -15,6 +15,7 @@ TagManager:
   - pollution
   - ground
   - barrier
+  - torres
   layers:
   - Default
   - TransparentFX
