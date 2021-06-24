@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6092942896111535727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3968892569494593107}
+  - component: {fileID: 981993037}
+  - component: {fileID: 981993035}
+  m_Layer: 0
+  m_Name: BasuraSensible
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3968892569494593107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092942896111535727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 31.9, y: 166.6, z: 699.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7318257919462034032}
+  - {fileID: 7318257919535808507}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &981993037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092942896111535727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 300, y: 20, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &981993035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092942896111535727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75678ef68906a134a8d38d3d4d073e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basuritas:
+  - {fileID: 7318257919462034035}
+  - {fileID: 7318257919535808504}
+  playerSensor: {fileID: 981993037}
+  estado: 0
+--- !u!1001 &3117023224212624566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3968892569494593107}
+    m_Modifications:
+    - target: {fileID: 5678556265260736197, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_Name
+      value: PilaBasura
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736197, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 207.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 534.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 106.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: deb36ba103a82bd40bc0b550b49decc8, type: 3}
+--- !u!1 &7318257919462034035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5678556265260736197, guid: deb36ba103a82bd40bc0b550b49decc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3117023224212624566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7318257919462034032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3117023224212624566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3117023224273150269
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3968892569494593107}
+    m_Modifications:
+    - target: {fileID: 5678556265260736197, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_Name
+      value: PilaBasura (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736197, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 184.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 534.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 107.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: deb36ba103a82bd40bc0b550b49decc8, type: 3}
+--- !u!1 &7318257919535808504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5678556265260736197, guid: deb36ba103a82bd40bc0b550b49decc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3117023224273150269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7318257919535808507 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5678556265260736198, guid: deb36ba103a82bd40bc0b550b49decc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3117023224273150269}
+  m_PrefabAsset: {fileID: 0}

@@ -17,6 +17,7 @@ TagManager:
   - barrier
   - torres
   - health
+  - basurita
   layers:
   - Default
   - TransparentFX

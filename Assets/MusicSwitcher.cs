@@ -25,16 +25,18 @@ public class MusicSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"Los colliders son {colliders.Count}");
+       // Debug.Log($"Los colliders son {colliders.Count}");
         if(colliders.Count  == 0)
         {
-            Debug.Log("Se deberia reproducir BG");
+            //Debug.Log("Se deberia reproducir BG");
             audioManager.ChangeBGM(background);
+            isBackgroundPlaying = true;
         }
         else
         {
-            Debug.Log("Se deberia reproducir combate");
+            //Debug.Log("Se deberia reproducir combate");
             audioManager.ChangeBGM(battleClip);
+            isBackgroundPlaying = false;
         }
     }
 
@@ -43,7 +45,7 @@ public class MusicSwitcher : MonoBehaviour
         if (other.CompareTag("enemigo"))
         {
             //audioManager.ChangeBGM(battleClip);
-            //isBackgroundPlaying = false;
+            //
         }
 
         {
