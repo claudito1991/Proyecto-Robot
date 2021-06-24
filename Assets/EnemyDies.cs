@@ -16,6 +16,8 @@ public class EnemyDies : MonoBehaviour
     {
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
+        selfCollider = GetComponent<BoxCollider>();
+        cambiadorMusica = GameObject.FindGameObjectWithTag("Player").GetComponent<MusicSwitcher>();
     }
 
     // Update is called once per frame

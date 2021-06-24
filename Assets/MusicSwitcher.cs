@@ -25,12 +25,7 @@ public class MusicSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log($"Numero de colliders enemigos {colliders.Count}");
-        if (colliders.Count == 0)
-        {
-            audioManager.ChangeBGM(background);
-           // Debug.Log($"Numero de colliders enemigos {colliders.Count}");
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,18 +48,21 @@ public class MusicSwitcher : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-    
+
+        //Debug.Log($"Numero de colliders enemigos {colliders.Count}");
+   
+
         if (!other.gameObject.CompareTag("enemigo"))
         {
-            audioManager.ChangeBGM(background);
-            Debug.Log("Sin enemigos en trigger");
+           audioManager.ChangeBGM(background);
+
         }
 
         else
         {
             audioManager.ChangeBGM(battleClip);
         }
-    
+
 
         //Debug.Log($"Hay {colliders.Count} enemigos en rango");
     }
