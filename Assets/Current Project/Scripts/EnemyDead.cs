@@ -17,34 +17,43 @@ public class EnemyDead : MonoBehaviour
 
     private pointsManager puntos;
 
-    private CapsuleCollider colisionador;
+    public CapsuleCollider colisionador;
     // Start is called before the first frame update
     void Start()
     {
         explosionParticulas = GetComponent<AudioSource>();
        
         puntos = GameObject.Find("GameManager").GetComponent<pointsManager>();
-        colisionador = GetComponent<CapsuleCollider>();        
+               
     }
 
-        private void OnTriggerEnter(Collider other)
+    //    private void OnTriggerEnter(Collider other)
+    //{
+    //    // Si lo que colisionó fue un proyectil, se destruye la malla del objeto, se escucha la explisión y se reproducen las partículas
+    //     if (other.gameObject.CompareTag("playerprojectile"))
+    //    {
+    //        colisionador.enabled = false;
+    //        explosionParticulas.PlayOneShot(explosion);
+    //        particulas.Play();
+    //        //gameManager.totalScore += 50.0f;
+    //        Destroy(enemigo);
+            
+    //    }
+    //}
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        // Si lo que colisionó fue un proyectil, se destruye la malla del objeto, se escucha la explisión y se reproducen las partículas
-         if (other.gameObject.CompareTag("projectil"))
+        if (collision.gameObject.CompareTag("playerprojectile"))
         {
             colisionador.enabled = false;
             explosionParticulas.PlayOneShot(explosion);
             particulas.Play();
             //gameManager.totalScore += 50.0f;
             Destroy(enemigo);
-            
+
         }
-    
-        
-          
-
     }
-
     // Update is called once per frame
     void Update()
     {
