@@ -60,7 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntos: {fileID: 0}
   segundosDeVida: 10
-  puntosPorSegundo: 40
+  puntosPorSegundo: 200
+  parentTower: {fileID: 0}
 --- !u!1 &8760492924650914432
 GameObject:
   m_ObjectHideFlags: 0

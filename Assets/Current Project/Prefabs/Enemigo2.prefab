@@ -162,8 +162,8 @@ MonoBehaviour:
   particulas: {fileID: 5407520180547141187}
   explosionParticulas: {fileID: 503765090648064534}
   explosion: {fileID: 8300000, guid: 9dc8e2cf25b7cc74a806c49a10a1ae86, type: 3}
-  puntosAlMorir: 10
-  puntosOverTime: 10
+  puntosAlMorir: 100
+  puntosOverTime: 2
   enemigo: {fileID: 8813941672768323215}
   colisionador: {fileID: 5673003751959511275}
 --- !u!54 &6196543435515961036

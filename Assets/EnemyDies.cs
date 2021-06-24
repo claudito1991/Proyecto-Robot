@@ -9,6 +9,8 @@ public class EnemyDies : MonoBehaviour
     public int damageReceived = 10;
 
     public HealthBar health;
+    public MusicSwitcher cambiadorMusica;
+    public BoxCollider selfCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +34,13 @@ public class EnemyDies : MonoBehaviour
             currentHealth -= damageReceived;
             health.SetHealth(currentHealth);
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (cambiadorMusica.colliders.Contains(selfCollider))
+            {
+            cambiadorMusica.colliders.Remove(selfCollider);
+            }
     }
 }
