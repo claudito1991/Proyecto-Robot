@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b6f359a1b6a714d9fc79359f788c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadCaminar: 10
+  velocidadCaminar: 20
   velocidadRotacion: 50
   sonidoPersonaje: {fileID: 238115858}
   health: {fileID: 238115857}
@@ -2667,7 +2667,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.092587814, y: 0.7265191, z: -0.099874236, w: 0.67351514}
+  m_LocalRotation: {x: 0.092707925, y: 0.72570807, z: -0.09976275, w: 0.67438895}
   m_LocalPosition: {x: -38.871956, y: 19.09, z: 40.768803}
   m_LocalScale: {x: 0.001, y: 0.001, z: 2.6660736}
   m_Children: []
@@ -3041,7 +3041,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023345456}
-  m_LocalRotation: {x: 0.092587814, y: 0.7265191, z: -0.09987425, w: 0.67351514}
+  m_LocalRotation: {x: 0.092707954, y: 0.72570807, z: -0.09976275, w: 0.67438895}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4600,7 +4600,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765083455}
-  m_LocalRotation: {x: 0.13086227, y: 0.72494096, z: -0.14355268, w: 0.66085434}
+  m_LocalRotation: {x: 0.13086227, y: 0.72494096, z: -0.14355269, w: 0.6608543}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5463,18 +5463,6 @@ MonoBehaviour:
   - "\xA1R\xE1pido que el mundo termina ahora!"
   textSpeed: 0.01
   initialSequence: {fileID: 1821129926}
---- !u!82 &2011563941 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2011563941, guid: cbc375278a73f4b419f463460df8e550,
-    type: 3}
-  m_PrefabInstance: {fileID: 2602845891341945495}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2011563942 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2011563942, guid: cbc375278a73f4b419f463460df8e550,
-    type: 3}
-  m_PrefabInstance: {fileID: 2602845891341945495}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2011563943 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2602845892296797325, guid: cbc375278a73f4b419f463460df8e550,
@@ -6096,26 +6084,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2011563941, guid: cbc375278a73f4b419f463460df8e550, type: 3}
-      propertyPath: Priority
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011563941, guid: cbc375278a73f4b419f463460df8e550, type: 3}
-      propertyPath: m_Volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011563941, guid: cbc375278a73f4b419f463460df8e550, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c34fe2b42aed7224d80c164517102a09, type: 3}
-    - target: {fileID: 2011563942, guid: cbc375278a73f4b419f463460df8e550, type: 3}
-      propertyPath: Priority
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011563942, guid: cbc375278a73f4b419f463460df8e550, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0e893b4f5417d2c49961e6bd85360b62, type: 3}
     - target: {fileID: 2564118228016085878, guid: cbc375278a73f4b419f463460df8e550,
         type: 3}
       propertyPath: m_RootOrder
@@ -6174,38 +6142,13 @@ PrefabInstance:
     - target: {fileID: 2602845891266734926, guid: cbc375278a73f4b419f463460df8e550,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.036148287
+      value: -0.036148302
       objectReference: {fileID: 0}
     - target: {fileID: 2602845891266734926, guid: cbc375278a73f4b419f463460df8e550,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.002499975
+      value: 0.0024999601
       objectReference: {fileID: 0}
-    - target: {fileID: 2602845892296797325, guid: cbc375278a73f4b419f463460df8e550,
-        type: 3}
-      propertyPath: inicialVolume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2602845892296797325, guid: cbc375278a73f4b419f463460df8e550,
-        type: 3}
-      propertyPath: sonidoInicial
-      value: 
-      objectReference: {fileID: 2011563941}
-    - target: {fileID: 2602845892296797325, guid: cbc375278a73f4b419f463460df8e550,
-        type: 3}
-      propertyPath: continueVolume
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2602845892296797325, guid: cbc375278a73f4b419f463460df8e550,
-        type: 3}
-      propertyPath: sonidoContinue
-      value: 
-      objectReference: {fileID: 2011563942}
-    - target: {fileID: 2602845892296797325, guid: cbc375278a73f4b419f463460df8e550,
-        type: 3}
-      propertyPath: audioClipInicio
-      value: 
-      objectReference: {fileID: 8300000, guid: c34fe2b42aed7224d80c164517102a09, type: 3}
     - target: {fileID: 2944865277179912652, guid: cbc375278a73f4b419f463460df8e550,
         type: 3}
       propertyPath: m_Name
