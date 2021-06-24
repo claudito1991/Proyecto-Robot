@@ -16,6 +16,7 @@ TagManager:
   - ground
   - barrier
   - torres
+  - health
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class Damage : MonoBehaviour
     public int MaxHealth = 100;
     public int currentHealth;
     public int damage = 10;
+    public int recover = 25;
 
     public HealthBar healthBar;
 
@@ -32,5 +33,15 @@ public class Damage : MonoBehaviour
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
         }
+
+
     }
+
+    public void SubirVida()
+    {
+        currentHealth += recover;
+        healthBar.SetHealth(currentHealth);
+    }
+
+   
 }
