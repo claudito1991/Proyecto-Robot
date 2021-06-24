@@ -7,6 +7,8 @@ public class PlayerControllerB : MonoBehaviour
     static Animator anim;
     public float velocidadCaminar = 10.0f;
     public float velocidadRotacion = 100.0f;
+    public AudioSource sonidoPersonaje;
+   
     //public GameObject proyectile; queda comentado porque lo voy a implementar con IK bones
     //public GameObject firePoint;
     private pointsManager puntos;
@@ -18,25 +20,37 @@ public class PlayerControllerB : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         puntos = GameObject.Find("GameManager").GetComponent<pointsManager>();
+        sonidoPersonaje = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         float traslacion = Input.GetAxis("Vertical") * velocidadCaminar;
         float rotacion = Input.GetAxis("Horizontal") * velocidadRotacion;
 
         transform.Translate(0, 0, traslacion * Time.deltaTime);
         transform.Rotate(0, rotacion * Time.deltaTime, 0);
 
+
+        SonidoMovimiento(traslacion);
+      
+
         if (traslacion != 0)
         {
+
+            
+            
             anim.SetBool("isWalk", true);
         }
 
         else
         {
+            
+            Debug.Log($"se esta reproduciendo el audio: {sonidoPersonaje.isPlaying}");
             anim.SetBool("isWalk", false);
 
         }
@@ -68,5 +82,15 @@ public class PlayerControllerB : MonoBehaviour
             estado.DefeatMessage(false);
             Destroy(gameObject);
         }    
+    }
+
+    public void SonidoMovimiento (float traslacion)
+    {
+        if (!sonidoPersonaje.isPlaying && traslacion != 0)
+        {
+            
+            sonidoPersonaje.volume = 0.2f;
+            sonidoPersonaje.Play();
+        }
     }
 }

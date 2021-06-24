@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 470589989}
   - component: {fileID: 1947065254}
   - component: {fileID: 7338134202899966966}
+  - component: {fileID: 564424728}
   m_Layer: 8
   m_Name: EnemyAI
   m_TagString: enemigo
@@ -539,9 +540,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3375c3caa3416d84c8becd93ff3bc90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 20
   currentHealth: 0
-  damageReceived: 10
+  damageReceived: 5
   health: {fileID: 1956956046}
 --- !u!82 &7338134202899966966
 AudioSource:
@@ -553,11 +554,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a0ba838aeb6935c4e96677bb81c46338, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -639,6 +640,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &564424728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578866681733759686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58920060b372cb3408624072ddf25c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonido: {fileID: 7338134202899966966}
+  audioClipLength: 0
 --- !u!1 &7578866681917803976
 GameObject:
   m_ObjectHideFlags: 0

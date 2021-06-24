@@ -11,7 +11,8 @@ public class generateEnemies : MonoBehaviour
 
     public GameObject Enemigo;
 
-    public int contador;
+    private int contador;
+    public int  maxEnemies;
 
     
     private void Start() 
@@ -34,7 +35,7 @@ public class generateEnemies : MonoBehaviour
     }
         IEnumerator EnemyDrop()
     {
-        while (contador < 20)
+        while (contador < maxEnemies)
         {
          limite= zona.bounds; 
         posicion = new Vector3(
@@ -45,7 +46,7 @@ public class generateEnemies : MonoBehaviour
 
         Instantiate(Enemigo, posicion, Quaternion.identity);
         yield return new WaitForSeconds(0.1f);
-        //Debug.Log("Se creo un enemigo");
+        Debug.Log("Se creo un enemigo");
         contador +=1;
         
 
