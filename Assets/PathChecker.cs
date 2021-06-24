@@ -10,7 +10,7 @@ public class PathChecker : MonoBehaviour
     {
         if (other.CompareTag("barrier"))
         {
-            Debug.Log("Is colliding");
+            //Debug.Log("Is colliding");
             PathIsBlocked = true;
         }
 

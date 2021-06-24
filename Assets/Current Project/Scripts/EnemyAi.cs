@@ -82,7 +82,7 @@ public class EnemyAi : MonoBehaviour
 
                     while (IsPathBlocked())
                     {
-                        Debug.Log("Path is blocked");
+                        //Debug.Log("Path is blocked");
                         GetDestination();
                     }
 

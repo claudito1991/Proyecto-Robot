@@ -166,6 +166,7 @@ MonoBehaviour:
   puntosOverTime: 2
   enemigo: {fileID: 8813941672768323215}
   colisionador: {fileID: 5673003751959511275}
+  esteCollider: {fileID: 5673003751959511275}
 --- !u!54 &6196543435515961036
 Rigidbody:
   m_ObjectHideFlags: 0

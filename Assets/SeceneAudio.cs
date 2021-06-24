@@ -7,18 +7,7 @@ public class SeceneAudio : MonoBehaviour
     public AudioSource BGM;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-       
-
-    }
 
     public void ChangeBGM(AudioClip music)
     {
@@ -30,6 +19,7 @@ public class SeceneAudio : MonoBehaviour
         {
             BGM.Stop();
             BGM.clip = music;
+            Debug.Log($"bgm CLIP IS {BGM.clip.name}");
             BGM.Play();
         }
    

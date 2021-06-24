@@ -17,7 +17,7 @@ public class EnemyDies : MonoBehaviour
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
         selfCollider = GetComponent<BoxCollider>();
-        cambiadorMusica = GameObject.FindGameObjectWithTag("Player").GetComponent<MusicSwitcher>();
+        cambiadorMusica = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<MusicSwitcher>();
     }
 
     // Update is called once per frame
@@ -40,13 +40,12 @@ public class EnemyDies : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (cambiadorMusica != null)
-        {
+      
             if (cambiadorMusica.colliders.Contains(selfCollider))
             {
                 cambiadorMusica.colliders.Remove(selfCollider);
             }
-        }
+        
     
     }
 }

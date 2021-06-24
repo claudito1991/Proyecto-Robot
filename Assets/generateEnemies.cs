@@ -46,7 +46,7 @@ public class generateEnemies : MonoBehaviour
 
         Instantiate(Enemigo, posicion, Quaternion.identity);
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("Se creo un enemigo");
+        //Debug.Log("Se creo un enemigo");
         contador +=1;
         
 

@@ -25,15 +25,25 @@ public class MusicSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log($"Los colliders son {colliders.Count}");
+        if(colliders.Count  == 0)
+        {
+            Debug.Log("Se deberia reproducir BG");
+            audioManager.ChangeBGM(background);
+        }
+        else
+        {
+            Debug.Log("Se deberia reproducir combate");
+            audioManager.ChangeBGM(battleClip);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("enemigo"))
         {
-            audioManager.ChangeBGM(battleClip);
-            isBackgroundPlaying = false;
+            //audioManager.ChangeBGM(battleClip);
+            //isBackgroundPlaying = false;
         }
 
         {
@@ -48,23 +58,15 @@ public class MusicSwitcher : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
-        //Debug.Log($"Numero de colliders enemigos {colliders.Count}");
-   
-
-        if (!other.gameObject.CompareTag("enemigo"))
+        if (!other.CompareTag("enemigo"))
         {
-           audioManager.ChangeBGM(background);
-
+           // Debug.Log("hay enemigos aqui");
         }
-
         else
         {
-            audioManager.ChangeBGM(battleClip);
+            //Debug.Log("No hay enemigos aqui");
         }
-
-
-        //Debug.Log($"Hay {colliders.Count} enemigos en rango");
+        
     }
 
   
@@ -81,8 +83,8 @@ public class MusicSwitcher : MonoBehaviour
 
         if (colliders.Count == 0)
         {
-            audioManager.ChangeBGM(background);
-            isBackgroundPlaying = true;
+            //audioManager.ChangeBGM(background);
+            //isBackgroundPlaying = true;
         }
 
 
