@@ -9,16 +9,22 @@ public class FaceSelector : MonoBehaviour
     public Sprite angryFace;
     public Image faceRenderer;
     public bool changeFace;
+    private MusicSwitcher audioManager;
+    private bool musicPlaying;
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<MusicSwitcher>();
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!changeFace)
+
+        musicPlaying = audioManager.isBackgroundPlaying;
+        if (musicPlaying)
         {
             faceRenderer.sprite = happyFace;
         }

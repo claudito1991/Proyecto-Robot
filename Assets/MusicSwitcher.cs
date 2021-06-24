@@ -11,12 +11,15 @@ public class MusicSwitcher : MonoBehaviour
     private List<Collider> colliders = new List<Collider>();
     public List<Collider> GetColliders() { return colliders; }
 
+    public bool isBackgroundPlaying;
+
 
     // Start is called before the first frame update
     void Start()
     {
         audioManager = FindObjectOfType<SeceneAudio>();
         audioManager.ChangeBGM(background);
+        isBackgroundPlaying = true;
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class MusicSwitcher : MonoBehaviour
         if (other.CompareTag("enemigo"))
         {
             audioManager.ChangeBGM(battleClip);
+            isBackgroundPlaying = false;
         }
 
         {
@@ -69,6 +73,7 @@ public class MusicSwitcher : MonoBehaviour
         if (colliders.Count == 0)
         {
             audioManager.ChangeBGM(background);
+            isBackgroundPlaying = true;
         }
 
 
