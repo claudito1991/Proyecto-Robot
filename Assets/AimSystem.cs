@@ -15,7 +15,7 @@ public class AimSystem : MonoBehaviour
     private float maxDistance;
     private Vector3 lockedEnemyPosition;
     public Vector3 aimingOffset = new Vector3(0f, 2f, 0f);
-    public float speed = 1.0f;
+    public float speed = 0.5f;
     public Transform characterTransform;
     private Vector3 restPos;
     public Transform restingPos;
@@ -108,7 +108,7 @@ public class AimSystem : MonoBehaviour
     private void Aiming()
     {
         
-        if (AimingAngle() < 50)
+        if (AimingAngle() < 60)
         {
             TargetAiming();
         }
