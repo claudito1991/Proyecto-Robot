@@ -88,7 +88,7 @@ public class pointsManager : MonoBehaviour
     {
         if (objectCalling)
         {
-            Debug.Log($"La camara que está llamando es {objectCalling.name}");
+            //Debug.Log($"La camara que está llamando es {objectCalling.name}");
             torreCam = objectCalling.GetComponentInChildren<CinemachineVirtualCamera>();
         }
         else
@@ -135,7 +135,7 @@ public class pointsManager : MonoBehaviour
             }
         }
 
-        Debug.Log($"Las torres activas son {torresActivas.Count}");
+        //Debug.Log($"Las torres activas son {torresActivas.Count}");
 
         if (torresActivas.Count == torres.Length)
         {

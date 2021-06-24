@@ -55,7 +55,7 @@ public class MusicSwitcher : MonoBehaviour
 
     
 
-        Debug.Log($"Hay {colliders.Count} enemigos en rango");
+        //Debug.Log($"Hay {colliders.Count} enemigos en rango");
     }
 
   

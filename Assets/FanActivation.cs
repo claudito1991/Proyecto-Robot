@@ -14,12 +14,13 @@ public class FanActivation : MonoBehaviour
     public float targetSpeed = 500;
     public float currentSpeed = 0;
     public float timeForMaxSpeed = 10f;
+
    
 
     // Start is called before the first frame update
     void Start()
     {
-       
+      
 
         
     }
@@ -30,10 +31,13 @@ public class FanActivation : MonoBehaviour
         
         if (isActive)
         {
+            
+            
             StartFan(fan1,targetSpeed);
             StartFan(fan2, targetSpeed);
             StartFan(fan3, targetSpeed);
             StartFan(fan4, targetSpeed);
+          
             //fan2.Rotate(Vector3.forward * fanSpeed * Time.deltaTime);
             //fan3.Rotate(Vector3.forward * fanSpeed * Time.deltaTime);
             //fan4.Rotate(Vector3.forward * fanSpeed * Time.deltaTime);

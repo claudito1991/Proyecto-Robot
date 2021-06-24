@@ -50,7 +50,7 @@ public class PlayerControllerB : MonoBehaviour
         else
         {
             
-            Debug.Log($"se esta reproduciendo el audio: {sonidoPersonaje.isPlaying}");
+            //Debug.Log($"se esta reproduciendo el audio: {sonidoPersonaje.isPlaying}");
             anim.SetBool("isWalk", false);
 
         }
