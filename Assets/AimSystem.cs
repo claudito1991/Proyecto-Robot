@@ -85,38 +85,48 @@ public class AimSystem : MonoBehaviour
 
     private void TargetAiming()
     {
-        Vector3 targetDir = enemyLocked.position - transform.position;
-        //targetDir.y = 0;
-        float step = speed * Time.deltaTime;
+       
+            Vector3 targetDir = enemyLocked.position - transform.position;
+            //targetDir.y = 0;
+            float step = speed * Time.deltaTime;
 
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-        Debug.DrawRay(transform.position, newDir, Color.red);
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+            Debug.DrawRay(transform.position, newDir, Color.red);
 
-        transform.rotation = Quaternion.LookRotation(newDir);
+            transform.rotation = Quaternion.LookRotation(newDir);
+       
+ 
 
 
     }
 
     private float AimingAngle()
     {
-        Vector3 targetDir = enemyLocked.position - transform.position;
-        float angle = Vector3.Angle(targetDir, characterTransform.forward);
-        //Debug.Log($"The angle between Canon and character is: {angle}");
-        return angle;
+       
+          
+        
+            Vector3 targetDir = enemyLocked.position - transform.position;
+            float angle = Vector3.Angle(targetDir, characterTransform.forward);
+            //Debug.Log($"The angle between Canon and character is: {angle}");
+            return angle;
     }
 
     private void Aiming()
     {
-        
-        if (AimingAngle() < 60)
+        if (enemyLocked != null)
         {
-            TargetAiming();
-        }
-        else
-        {
+            if (AimingAngle() < 60)
+            {
+                TargetAiming();
+            }
+            else
+            {
 
-           
+
+            }
         }
+        
+
     }
 
  

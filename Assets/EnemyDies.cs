@@ -40,9 +40,13 @@ public class EnemyDies : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (cambiadorMusica.colliders.Contains(selfCollider))
+        if (cambiadorMusica != null)
+        {
+            if (cambiadorMusica.colliders.Contains(selfCollider))
             {
-            cambiadorMusica.colliders.Remove(selfCollider);
+                cambiadorMusica.colliders.Remove(selfCollider);
             }
+        }
+    
     }
 }

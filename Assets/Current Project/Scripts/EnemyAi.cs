@@ -30,6 +30,7 @@ public class EnemyAi : MonoBehaviour
     public GameObject vfxShooting;
     public PathChecker pathChecker;
     public float enemyRotationSpeed = 10f;
+    public Transform selfTransform;
 
     
 
@@ -47,12 +48,19 @@ public class EnemyAi : MonoBehaviour
         
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         anim = GetComponentInChildren<Animator>();
+        selfTransform = GetComponent<Transform>();
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (selfTransform == null)
+        {
+            return;
+        }
         switch(currentState)
         {
             case EnemyState.Wander:
@@ -126,25 +134,28 @@ public class EnemyAi : MonoBehaviour
                 }
             case EnemyState.Attack:
                 {
-
-                    //if (PlayerInSight())
-                    //{
+                    if (anim != null)
+                    {
+                        //if (PlayerInSight())
+                        //{
                         var targetLocation = new Vector3(target.position.x, target.position.y + targetOffset, target.position.z);
                         transform.LookAt(targetLocation);
                         anim.SetBool("isWalk", false);
                         anim.SetTrigger("isAttack");
                         //Debug.Log("Te ataco");
                         EnemyShooting();
-                    //}
-                    if (PlayerInSight())
-                    {
-                        currentState = EnemyState.Chase;
-                        anim.SetBool("isWalk", true);
-                    }
+                        //}
+                        if (PlayerInSight())
+                        {
+                            currentState = EnemyState.Chase;
+                            anim.SetBool("isWalk", true);
+                        }
 
-                    if (!PlayerInSight())
-                    {
-                        currentState = EnemyState.Wander;
+                        if (!PlayerInSight())
+                        {
+                            currentState = EnemyState.Wander;
+                        }
+
                     }
 
                     break;
