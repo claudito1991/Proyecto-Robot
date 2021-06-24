@@ -57,7 +57,7 @@ public class PlayerControllerB : MonoBehaviour
 
     public void GameOver()
     {
-        if (puntos.totalPoints < 0.1f || puntos.totalPoints > 9999.0f || health.currentHealth <= 0)
+        if (puntos.totalPoints < 0.1f ||  health.currentHealth <= 0)
         {
             estado.DefeatMessage(true);
             Destroy(gameObject);
@@ -66,6 +66,7 @@ public class PlayerControllerB : MonoBehaviour
         if (puntos.totalPoints > 9999.9f)
         {
             estado.DefeatMessage(false);
+            Destroy(gameObject);
         }    
     }
 }
